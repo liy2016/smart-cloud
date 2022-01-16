@@ -62,6 +62,12 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+			<exclusions>
+				<exclusion>
+					<artifactId>spring-cloud-netflix-ribbon</artifactId>
+					<groupId>org.springframework.cloud</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		
 		<dependency>
