@@ -56,7 +56,8 @@
         <dynamic-datasource>3.5.0</dynamic-datasource>
         <shardingsphere-jdbc>5.0.0</shardingsphere-jdbc>
         <seata>1.4.2</seata>
-        <nacos>2021.1</nacos>
+        <spring-cloud-starter-alibaba-nacos>2021.1</spring-cloud-starter-alibaba-nacos>
+        <nacos-client>2.0.3</nacos-client>
         <mysql>8.0.27</mysql>
         <podam>7.2.8.RELEASE</podam>
         <guava>31.0.1-jre</guava>
@@ -252,13 +253,31 @@
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-                <version>${nacos}</version>
+                <version>${spring-cloud-starter-alibaba-nacos}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.alibaba.nacos</groupId>
+                        <artifactId>nacos-client</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
 
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-                <version>${nacos}</version>
+                <version>${spring-cloud-starter-alibaba-nacos}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.alibaba.nacos</groupId>
+                        <artifactId>nacos-client</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-client</artifactId>
+                <version>${nacos-client}</version>
             </dependency>
 
             <dependency>
